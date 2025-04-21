@@ -44,4 +44,14 @@ public class PlayerControllers {
     public ResponseEntity<List<Player>> getPlayersByHits(@RequestParam int hits){
         return ResponseEntity.ok(playerService.getPlayersByHits(hits));
     }
+
+    @GetMapping("/totalYears")
+    public ResponseEntity<List<Player>> getPlayersByYears(@RequestParam int years){
+        return ResponseEntity.ok(playerService.getPlayersByYears(years));
+    }
+
+    @GetMapping("/hallOfFame")
+    public ResponseEntity<List<Player>> getPlayersByHallOfFame(@RequestParam int HOF){
+        return ResponseEntity.ok(playerService.getPlayersByHallOfFame(HOF));
+    }
 }

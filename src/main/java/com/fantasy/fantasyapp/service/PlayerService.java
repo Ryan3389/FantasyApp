@@ -47,16 +47,16 @@ public class PlayerService {
         return playerRepository.findByHomeRunsGreaterThanEqual(homeRuns);
     }
 
+    // Get player by years
+    public List<Player> getPlayersByYears(int years) {
+        return playerRepository.findByYearsGreaterThanEqual(years);
+    }
 
+    // Get player by HOF
+    public List<Player> getPlayersByHallOfFame(int HOF) {
+        return playerRepository.findByHallOfFame(HOF);
+    }
 
-
-
-
-    // Get players by team
-        // Get players by condition - years
-            // hr, hits, stolen bases
-        // Get players by hall of fame
-        // Get players by not hall of fame
 
 
 }
