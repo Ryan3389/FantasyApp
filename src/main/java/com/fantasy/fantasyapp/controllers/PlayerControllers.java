@@ -4,6 +4,7 @@ import com.fantasy.fantasyapp.dto.PlayerSearchDTO;
 import com.fantasy.fantasyapp.model.Player;
 import com.fantasy.fantasyapp.repository.PlayerRepository;
 import com.fantasy.fantasyapp.service.PlayerService;
+import org.apache.coyote.Request;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,5 +28,10 @@ public class PlayerControllers {
     @PostMapping("/searchSinglePlayer")
     public ResponseEntity<Player> findSinglePlayer(@RequestBody PlayerSearchDTO playerSearchDTO){
         return ResponseEntity.ok(playerService.findPlayerByPlayer(playerSearchDTO.getPlayer()));
+    }
+
+    @GetMapping("/totalHomeRuns")
+    public ResponseEntity<List<Player>> getPlayersByHomeRuns(@RequestParam int homeRuns){
+        return ResponseEntity.ok(playerService.getPlayersByHomeRuns(homeRuns));
     }
 }
