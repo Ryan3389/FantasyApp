@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface PlayerRepository extends JpaRepository<Player, String> {
     void deleteByPlayer(String playerName);
     Optional<Player> findByPlayer(String player);
-//    List<Player> findByHomeRunsGreaterThanOrEqual(int homeRuns);
     List<Player> findByHomeRunsGreaterThanEqual(int homeRuns);
+    List<Player> findByHitsGreaterThanEqual(int hits);
 }

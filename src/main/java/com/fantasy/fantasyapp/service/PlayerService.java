@@ -31,10 +31,19 @@ public class PlayerService {
         return player.orElse(null);
     }
 
+    // Get player by total hits
+    public List<Player> getPlayersByHits(int hits) {
+        return playerRepository.findByHitsGreaterThanEqual(hits);
+    }
+
+    // Get player by total home runs
     public List<Player> getPlayersByHomeRuns(int homeRuns) {
 //        return playerRepository.findByHomeRunsGreaterThanOrEqualTo(homeRuns);
         return playerRepository.findByHomeRunsGreaterThanEqual(homeRuns);
     }
+
+
+
 
     // Get players by team
         // Get players by condition - years
