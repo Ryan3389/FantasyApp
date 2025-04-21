@@ -36,6 +36,11 @@ public class PlayerService {
         return playerRepository.findByHitsGreaterThanEqual(hits);
     }
 
+    // Get player by stolen bases
+    public List<Player> getPlayersByStolenBases(int stolenBases) {
+        return playerRepository.findByStolenBasesGreaterThanEqual(stolenBases);
+    }
+
     // Get player by total home runs
     public List<Player> getPlayersByHomeRuns(int homeRuns) {
 //        return playerRepository.findByHomeRunsGreaterThanOrEqualTo(homeRuns);
@@ -45,9 +50,11 @@ public class PlayerService {
 
 
 
+
+
     // Get players by team
         // Get players by condition - years
-            // hr, hits, stolen bases, etc over X amount
+            // hr, hits, stolen bases
         // Get players by hall of fame
         // Get players by not hall of fame
 

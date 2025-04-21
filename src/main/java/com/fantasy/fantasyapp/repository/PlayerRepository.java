@@ -14,4 +14,5 @@ public interface PlayerRepository extends JpaRepository<Player, String> {
     Optional<Player> findByPlayer(String player);
     List<Player> findByHomeRunsGreaterThanEqual(int homeRuns);
     List<Player> findByHitsGreaterThanEqual(int hits);
+    List<Player> findByStolenBasesGreaterThanEqual(int stolenBases);
 }
