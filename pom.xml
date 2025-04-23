@@ -74,7 +74,6 @@
                     <release>21</release>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
