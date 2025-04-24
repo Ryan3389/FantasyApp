@@ -26,7 +26,6 @@ public class WebConfig {
         return new CorsFilter();
     }
 }
-
 //@Bean
 //public WebMvcConfigurer corsConfigurer() {
 //    return new WebMvcConfigurer() {
