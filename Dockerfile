@@ -2,10 +2,8 @@ FROM eclipse-temurin:21-jdk-jammy
 
 WORKDIR /app
 
-COPY . .
-
-RUN ./mvnw clean package -DskipTests
+COPY target/*.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "target/fantasyApp-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
