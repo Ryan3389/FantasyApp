@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #00385d;
+    --white: whitesmoke;
+    --red: #e50022;
+}
+
+/* Navbar */
+
+header{
+    background-color: var(--navy);
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 12vh;
+    width: 90%;
+    margin: auto;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: auto;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.nav-logo{
+    height: 8vh;
+    border-radius: 5px;
+}
