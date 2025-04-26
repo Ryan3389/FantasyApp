@@ -8,6 +8,8 @@
     --navy: #00385d;
     --white: whitesmoke;
     --red: #e50022;
+    --table-bg-color: #ccc;
+    --table-font-color: #222;
 }
 
 /* Navbar */
@@ -84,4 +86,30 @@ nav{
 /* Add this later */
 .hero-logo{
     height: 15vh;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.table-names{
+    display: flex;
+    gap: 30px;
+    background-color: var(--table-bg-color);
+    color: var(--table-font-color);
+    width: fit-content;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.table-names div p{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-radius: 1px solid var(--table-font-color);
+}
+
+.heading-bold{
+    font-weight: bold;
 }

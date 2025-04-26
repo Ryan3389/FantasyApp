@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/predict")
+@RequestMapping("/players")
 public class PredictControllers {
     private final PredictService predictService;
 
@@ -16,7 +16,7 @@ public class PredictControllers {
         this.predictService = predictService;
     }
 
-    @PostMapping("/stats")
+    @PostMapping("/predict")
     public ResponseEntity<String> Predict(@RequestBody PredictDTO predictDTO) {
         String url = "https://python-predict.onrender.com/api/predict";
 
