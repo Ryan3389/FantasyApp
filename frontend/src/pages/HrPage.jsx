@@ -1,7 +1,11 @@
 import { useState, useEffect} from "react";
+import Stats from "../components/Stats.jsx";
 
 function HrPage(){
-    const [homeRunCount, setHomeRunCount ] = useState(100)
+    const dataLimit = 4
+    const [ homeRunCount, setHomeRunCount ] = useState(100)
+    const [ playerStats, setPlayerStats ] = useState([])
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,7 +16,8 @@ function HrPage(){
                     throw new Error()
                 }
                 const data = await response.json()
-                console.log(data)
+                const limitedData = data.slice(0, dataLimit)
+                setPlayerStats(limitedData)
             }
 
             catch (error){
@@ -23,9 +28,10 @@ function HrPage(){
 
     }, []);
     return (
-        <h1>Home Runs</h1>
+        <Stats
+            stats={playerStats}
+        />
     )
 }
 
 export default HrPage
-//  const response = await fetch(`/players/getAllPlayers`)

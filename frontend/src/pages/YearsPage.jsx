@@ -1,7 +1,9 @@
 import { useState, useEffect} from "react";
-
+import Stats from "../components/Stats.jsx";
 function YearsPage(){
-    const [ totalYears, setTotalYears ] = useState(2000)
+    const dataLimit = 4
+    const [ totalYears, setTotalYears ] = useState(10)
+    const [playerStats, setPlayerStats ] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,6 +15,9 @@ function YearsPage(){
                 }
 
                 const data = await response.json()
+                const limitedData = data.slice(0, dataLimit)
+
+                setPlayerStats(limitedData)
                 console.log(data)
             }
          catch (error){
@@ -25,7 +30,9 @@ function YearsPage(){
     }, []);
 
     return (
-        <h1>Years Page</h1>
+       <Stats
+           stats={playerStats}
+       />
     )
 
 }

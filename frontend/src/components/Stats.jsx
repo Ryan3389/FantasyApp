@@ -1,76 +1,57 @@
-function Stats({ player, years, games, atBats, runs, hits, doubles, triples, homeRuns, rbi, baseOnBalls, strikeOuts, stolenBases, caughtStealing, battingAverage, hallOfFame}){
+
+function Stats({ stats }){
     return(
-        <section>
-            <article className="table-container">
-                <div className="table-names">
-                    <div>
-                        <p className="heading-bold">Player</p>
-                        {/*<p>{player}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Years</p>
-                        {/*<p>{years}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Games</p>
-                        {/*<p>{games}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">At Bats</p>
-                        {/*<p>{atBats}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Runs</p>
-                        {/*<p>{runs}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Hits</p>
-                        {/*<p>{hits}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Doubles</p>
-                        {/*<p>{doubles}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Triples</p>
-                        {/*<p>{triples}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Home Runs</p>
-                        {/*<p>{homeRuns}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">RBI</p>
-                        {/*<p>{rbi}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Walks</p>
-                        {/*<p>{baseOnBalls}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Strike Outs</p>
-                        {/*<p>{strikeOuts}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Stolen Bases</p>
-                        {/*<p>{stolenBases}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Caught Stealing</p>
-                        {/*<p>{caughtStealing}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Batting Average</p>
-                        {/*<p>{battingAverage}</p>*/}
-                    </div>
-                    <div>
-                        <p className="heading-bold">Hall of Fame</p>
-                        {/*<p>{hallOfFame}</p>*/}
-                    </div>
-                </div>
-            </article>
+        <section className="hr-section">
+            <table className="content-table">
+                <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Years</th>
+                    <th>Games</th>
+                    <th>At Bats</th>
+                    <th>Runs</th>
+                    <th>Hits</th>
+                    <th>Doubles</th>
+                    <th>Triples</th>
+                    <th>Home Runs</th>
+                    <th>RBI</th>
+                    <th>Walks</th>
+                    <th>Strike Outs</th>
+                    <th>Stolen Bases</th>
+                    <th>Caught Stealing</th>
+                    <th>Batting Average</th>
+                    <th>Hall of Fame</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                { stats.map((player, index) => (
+                    <tr key={index}>
+                        <td>{player.player}</td>
+                        <td>{player.years}</td>
+                        <td>{player.games}</td>
+                        <td>{player.atBats}</td>
+                        <td>{player.runs}</td>
+                        <td>{player.hits}</td>
+                        <td>{player.doubles}</td>
+                        <td>{player.triples}</td>
+                        <td>{player.homeRuns}</td>
+                        <td>{player.rbi}</td>
+                        <td>{player.baseOnBalls}</td>
+                        <td>{player.strikeOuts}</td>
+                        <td>{player.stolenBases}</td>
+                        <td>{player.caughtStealing}</td>
+                        <td>{player.battingAverage}</td>
+                        <td>{player.hallOfFame}</td>
+                    </tr>
+                ))}
+                </tbody>
+            </table>
+            <button>Load More</button>
         </section>
     )
 }
+
+
 
 export default Stats
