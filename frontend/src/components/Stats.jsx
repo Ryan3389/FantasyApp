@@ -1,5 +1,5 @@
 
-function Stats({ stats }){
+function Stats({ stats,  clickHandler, clickHandlerFewerPlayers }){
     return(
         <section className="hr-section">
             <table className="content-table">
@@ -47,7 +47,8 @@ function Stats({ stats }){
                 ))}
                 </tbody>
             </table>
-            <button>Load More</button>
+            <button onClick={clickHandler}>Load More</button>
+            <button onClick={clickHandlerFewerPlayers}>View Less</button>
         </section>
     )
 }

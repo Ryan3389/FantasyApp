@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
 import Stats from "../components/Stats.jsx";
 function YearsPage(){
-    const dataLimit = 4
+    const [dataLimit, setDataLimit] = useState(10)
     const [ totalYears, setTotalYears ] = useState(10)
     const [playerStats, setPlayerStats ] = useState([])
 
@@ -27,12 +27,27 @@ function YearsPage(){
         }
         fetchData()
 
-    }, []);
+    }, [dataLimit]);
+
+    const handleLoadMorePlayers = () => {
+        setDataLimit(prevState => prevState += 10)
+    }
+
+    const handleLoadFewerPlayers = () => {
+        setDataLimit(prevState => prevState -= 10)
+    }
+
 
     return (
-       <Stats
-           stats={playerStats}
-       />
+        <>
+            <Stats
+                stats={playerStats}
+                clickHandler={handleLoadMorePlayers}
+                clickHandlerFewerPlayers={handleLoadFewerPlayers}
+
+            />
+        </>
+
     )
 
 }

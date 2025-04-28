@@ -7,8 +7,9 @@ import HitsPage from "./pages/HitsPage.jsx";
 import HofPage from "./pages/HofPage.jsx";
 import HrPage from "./pages/HrPage.jsx";
 import YearsPage from "./pages/YearsPage.jsx";
-
+import PredictPage from "./pages/PredictPage.jsx";
 import {createBrowserRouter, Route, RouterProvider} from "react-router-dom";
+
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "/hof",
                 element: <HofPage/>
+            },
+            {
+                path: '/predict',
+                element: <PredictPage />
             }
 
         ]

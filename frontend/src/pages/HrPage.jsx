@@ -2,7 +2,8 @@ import { useState, useEffect} from "react";
 import Stats from "../components/Stats.jsx";
 
 function HrPage(){
-    const dataLimit = 4
+    // let dataLimit = 10
+    const [ dataLimit, setDataLimit ] = useState(10)
     const [ homeRunCount, setHomeRunCount ] = useState(100)
     const [ playerStats, setPlayerStats ] = useState([])
 
@@ -26,11 +27,43 @@ function HrPage(){
         }
         fetchData()
 
-    }, []);
+    }, [dataLimit, homeRunCount]);
+
+
+    const handleLoadMorePlayers = () => {
+        setDataLimit(( prevState => prevState += 10))
+    }
+
+    const handleLoadFewerPlayers = () => {
+        setDataLimit((prevState => prevState -= 10))
+    }
+
+    // Filter Buttons
+
+    const view10OrMoreHR = () => {
+        setHomeRunCount(100)
+    }
+
+    const view300OrMoreHR = () => {
+        setHomeRunCount(300)
+    }
+
+    const view400OrMoreHR = () => {
+        setHomeRunCount(400)
+    }
+
     return (
-        <Stats
-            stats={playerStats}
-        />
+        <>
+            <button onClick={view10OrMoreHR}>100 Home Runs</button>
+            <button onClick={view300OrMoreHR}>300 Home Runs</button>
+            <button onClick={view400OrMoreHR}>400 Home Runs</button>
+            <Stats
+                stats={playerStats}
+                clickHandler={handleLoadMorePlayers}
+                clickHandlerFewerPlayers={handleLoadFewerPlayers}
+            />
+        </>
+
     )
 }
 
