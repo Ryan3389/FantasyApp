@@ -21,16 +21,4 @@ public class PredictService {
                 .bodyToMono(String.class);
     }
 }
-//@Component
-//public class PredictService {
-//    private WebClient webClient = WebClient.create();
-//
-//    public Mono<String> predictPlayerHOF(String url, PredictDTO data) {
-//        return webClient.post()
-//                .uri(url)
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .body(Mono.just(data), PredictDTO.class)
-//                .retrieve()
-//                .bodyToMono(String.class);
-//    }
-//}
+

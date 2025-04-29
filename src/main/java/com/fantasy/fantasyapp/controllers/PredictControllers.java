@@ -18,8 +18,7 @@ public class PredictControllers {
 
     @PostMapping("/predict")
     public ResponseEntity<String> Predict(@RequestBody PredictDTO predictDTO) {
-//        String url = "https://python-predict.onrender.com/api/predict";
-        String url = "https://python-predict.onrender.com/api/predict";
+        String url = "http://localhost:5000/api/predict";
 
         String response = predictService.predictPlayerHOF(url, predictDTO).block();
 

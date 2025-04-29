@@ -11,6 +11,7 @@ function Navbar() {
                     <Link to={"hits"}>Hits</Link>
                     <Link to={"/years"}>Years</Link>
                     <Link to={"/hof"}>Hall of Fame</Link>
+                    <Link to={"/predict"}>Predict</Link>
                 </div>
             </nav>
         </header>

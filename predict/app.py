@@ -4,8 +4,10 @@ import pandas as pd
 import joblib
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 model = joblib.load('hof_model.pkl')
 scaler = joblib.load('scaler.pkl')
