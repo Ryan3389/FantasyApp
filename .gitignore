@@ -33,3 +33,10 @@ build/
 .vscode/
 
 .env
+
+500hits.csv
+
+python-venv
+
+hof_model.pkl
+scaler.pkl
