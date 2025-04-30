@@ -47,8 +47,10 @@ function Stats({ stats,  clickHandler, clickHandlerFewerPlayers }){
                 ))}
                 </tbody>
             </table>
-            <button onClick={clickHandler}>Load More</button>
-            <button onClick={clickHandlerFewerPlayers}>View Less</button>
+            <span className="filter-btn-container">
+                 <button onClick={clickHandler}>Load More</button>
+                <button onClick={clickHandlerFewerPlayers}>View Less</button>
+            </span>
         </section>
     )
 }

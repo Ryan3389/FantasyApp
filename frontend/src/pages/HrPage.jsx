@@ -54,9 +54,12 @@ function HrPage(){
 
     return (
         <>
-            <button onClick={view10OrMoreHR}>100 Home Runs</button>
-            <button onClick={view300OrMoreHR}>300 Home Runs</button>
-            <button onClick={view400OrMoreHR}>400 Home Runs</button>
+           <span className="filter-btn-container">
+               <button onClick={view10OrMoreHR}>100 Home Runs</button>
+                <button onClick={view300OrMoreHR}>300 Home Runs</button>
+                <button onClick={view400OrMoreHR}>400 Home Runs</button>
+           </span>
+
             <Stats
                 stats={playerStats}
                 clickHandler={handleLoadMorePlayers}

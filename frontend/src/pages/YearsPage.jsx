@@ -40,6 +40,9 @@ function YearsPage(){
 
     return (
         <>
+            {/*<span className="filter-btn-container">*/}
+            {/*    <button></button>*/}
+            {/*</span>*/}
             <Stats
                 stats={playerStats}
                 clickHandler={handleLoadMorePlayers}

@@ -55,9 +55,12 @@ function HitsPage(){
 
     return(
         <>
-            <button onClick={view1000PlusHits}>Players with 1000 Hits</button>
-            <button onClick={view2000PlusHits}>Players with 2000 Hits</button>
-            <button onClick={view4000PlusHits}>Players with 4000 Hits</button>
+            <span className="filter-btn-container">
+                <button onClick={view1000PlusHits}>Players with 1000 Hits</button>
+                <button onClick={view2000PlusHits}>Players with 2000 Hits</button>
+                <button onClick={view4000PlusHits}>Players with 4000 Hits</button>
+            </span>
+
 
             <Stats
                 stats={playerStats}

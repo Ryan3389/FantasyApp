@@ -45,8 +45,11 @@ function HofPage(){
     }
     return (
         <>
-            <button onClick={handleViewHOF}>Players in HOF</button>
-            <button onClick={handleViewNotHOF}>Players not in HOF</button>
+            <span className="filter-btn-container">
+                <button onClick={handleViewHOF}>Players in HOF</button>
+                <button onClick={handleViewNotHOF}>Players not in HOF</button>
+            </span>
+
 
             <Stats
                 stats={playerStats}
