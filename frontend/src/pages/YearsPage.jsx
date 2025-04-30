@@ -2,7 +2,7 @@ import { useState, useEffect} from "react";
 import Stats from "../components/Stats.jsx";
 function YearsPage(){
     const [dataLimit, setDataLimit] = useState(10)
-    const [ totalYears, setTotalYears ] = useState(10)
+    const [ totalYears, setTotalYears ] = useState(5)
     const [playerStats, setPlayerStats ] = useState([])
 
     useEffect(() => {
@@ -38,11 +38,10 @@ function YearsPage(){
     }
 
 
+
+
     return (
         <>
-            {/*<span className="filter-btn-container">*/}
-            {/*    <button></button>*/}
-            {/*</span>*/}
             <Stats
                 stats={playerStats}
                 clickHandler={handleLoadMorePlayers}

@@ -12,8 +12,12 @@
     --red: #e50022;
     --table-bg-color: #ccc;
     --table-font-color: #222;
+    --main-bg-color: #ccc
 }
 
+body{
+    background-color: var(--main-bg-color);
+}
 /* Navbar */
 
 header{
@@ -161,7 +165,13 @@ nav{
 }
 
 /* Form */
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 
+}
 form{
     display: flex;
     justify-content: center;
@@ -172,7 +182,8 @@ form{
     width: 30vw;
     margin: 10px auto;
     padding: 20px;
-
+    background-color: whitesmoke;
+    border-radius: 5px;
 }
 
 .input-container{
@@ -195,5 +206,33 @@ input[type="submit"]{
     margin: 10px 0;
 }
 
+/* Media Queries */
 
+@media only screen and (max-width: 1200px){
+    .nav-links a{
+        font-size: 1rem;
+    }
+
+    .filter-btn-container button{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .nav-links a{
+        font-size: 0.8rem;
+    }
+    .filter-btn-container button{
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .nav-links a{
+        font-size: 0.7rem;
+    }
+    .filter-btn-container button{
+        font-size: 0.6rem;
+    }
+}
 
