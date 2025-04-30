@@ -10,9 +10,11 @@
     --btn-hover: #853603;
     --white: whitesmoke;
     --red: #e50022;
+    --red-hover: #8c0317;
     --table-bg-color: #ccc;
     --table-font-color: #222;
-    --main-bg-color: #ccc
+    --main-bg-color: #ccc;
+    --box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 body{
@@ -108,7 +110,8 @@ nav{
     min-width: 400px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    box-shadow: var(--box-shadow);
 }
 
 .content-table thead tr {
@@ -154,7 +157,7 @@ nav{
     border: 1px solid var(--btn-bg);
     border-radius: 5px;
     background-color: var(--btn-bg);
-    color: whitesmoke;
+    color: var(--white);
     font-size: 1rem;
     cursor: pointer;
 }
@@ -178,16 +181,20 @@ form{
     align-items: center;
     flex-direction: column;
     height: fit-content;
-    border: 1px solid;
     width: 30vw;
     margin: 10px auto;
     padding: 20px;
     background-color: whitesmoke;
     border-radius: 5px;
+    box-shadow: var(--box-shadow);
 }
 
 .input-container{
     width: 50%;
+}
+.input-container label{
+    font-size: 1.2rem;
+    color: var(--navy);
 }
 
 .stats-input{
@@ -201,11 +208,64 @@ form{
 input[type="submit"]{
     padding: 8px 20px;
     border-radius: 5px;
-    border: 1px solid #222222;
+    border: 1px solid var(--red);
     cursor: pointer;
     margin: 10px 0;
+    background-color: var(--red);
+    color: var(--white);
+    font-weight: bold;
 }
 
+input[type="submit"]:hover{
+    background-color: var(--red-hover);
+    border: 1px solid var(--red-hover);
+    transition: 0.3s;
+}
+
+form h2{
+    font-size: 1.8rem;
+    padding-bottom: 15px;
+    color: var(--navy);
+}
+
+/* Predict Results Section */
+.results-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 5em;
+    background-color: var(--white);
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    box-shadow: var(--box-shadow);
+}
+.results-section h1{
+    font-size: 2.125rem;
+    margin-bottom: 0.8em;
+}
+
+.results-section p{
+    margin-bottom: 10px;
+}
+
+
+.new-prediction-btn{
+    padding: 8px 16px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: var(--red);
+    color: whitesmoke;
+    border: 1px solid var(--red);
+    font-size: 1rem;
+}
+
+.new-prediction-btn:hover{
+    background-color: var(--red-hover);
+    border: 1px solid var(--red-hover);
+    transition: 0.3s;
+    cursor: pointer;
+}
 /* Media Queries */
 
 @media only screen and (max-width: 1200px){

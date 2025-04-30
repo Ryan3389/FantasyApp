@@ -3,6 +3,7 @@ function Form({ fields, handleChange, handleFormSubmit }) {
     return (
         <section className="form-section">
             <form onSubmit={handleFormSubmit}>
+                <h2>Make a Prediction</h2>
                 {fields.map((field, index) => (
                     <div key={index} className="input-container">
                             <label htmlFor={field.name}>{field.label}</label>

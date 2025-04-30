@@ -13,6 +13,9 @@ function PredictPage() {
 
     })
 
+    const [ pageLayout, setPageLayout ] = useState("form")
+    const [ predictionResults, setPredictionResults ] = useState(null)
+
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormState({
@@ -38,10 +41,16 @@ function PredictPage() {
 
             const data = await response.json()
             console.log(data)
+            setPredictionResults(data)
+            setPageLayout("results")
 
         } catch (error) {
             console.log(error)
         }
+    }
+
+    const handleNewPrediction = () => {
+        setPageLayout("form")
     }
 
     const fields = [
@@ -56,12 +65,24 @@ function PredictPage() {
 
     return(
         <section className="form-section">
-            <Form
-                fields={fields}
-                formData={formState}
-                handleChange={handleChange}
-                handleFormSubmit={handleFormSubmit}
-            />
+            {pageLayout === "form" ?
+                <Form
+                    fields={fields}
+                    formData={formState}
+                    handleChange={handleChange}
+                    handleFormSubmit={handleFormSubmit}
+                /> :
+                <section className="results-section">
+                   <h1>Prediction</h1>
+                    <p>{predictionResults}</p>
+                    <button onClick={handleNewPrediction} className="new-prediction-btn">New Prediction</button>
+                </section>}
+            {/*<Form*/}
+            {/*    fields={fields}*/}
+            {/*    formData={formState}*/}
+            {/*    handleChange={handleChange}*/}
+            {/*    handleFormSubmit={handleFormSubmit}*/}
+            {/*/>*/}
         </section>
     )
 }
