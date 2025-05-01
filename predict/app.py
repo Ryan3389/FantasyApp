@@ -29,5 +29,5 @@ def get_player_stats():
     scaled_player_stats = scaler.transform(player_stats)
 
     model_prediction = model.predict(scaled_player_stats)
-
-    return jsonify("Hall of Fame: Yes" if model_prediction[0] == 1 else "Hall of Fame: No")
+    return jsonify("This player is predicted to make the Hall of Fame" if model_prediction[0] == 1 else "This player will not make the Hall of Fame")
+    # return jsonify("Hall of Fame: Yes" if model_prediction[0] == 1 else "Hall of Fame: No")

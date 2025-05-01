@@ -77,12 +77,6 @@ function PredictPage() {
                     <p>{predictionResults}</p>
                     <button onClick={handleNewPrediction} className="new-prediction-btn">New Prediction</button>
                 </section>}
-            {/*<Form*/}
-            {/*    fields={fields}*/}
-            {/*    formData={formState}*/}
-            {/*    handleChange={handleChange}*/}
-            {/*    handleFormSubmit={handleFormSubmit}*/}
-            {/*/>*/}
         </section>
     )
 }
