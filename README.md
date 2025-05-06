@@ -18,17 +18,17 @@ A full-stack application that allows users to browse player statistics, filter d
   - Players in the Hall of Fame vs Not in the Hall of Fame
 - Submit custom stats to get a **Hall of Fame prediction** via the ML model.
 
-### ⚙️ Backend (Spring Boot + Java)
+### Backend (Spring Boot + Java)
 - **CRUD API** for managing player data.
 - **Endpoints for filtering** by key statistics.
 - Integrated with PostgreSQL to fetch player data.
 
-### 🧠 Machine Learning (Python)
+### Machine Learning (Python)
 - Trained ML model predicts Hall of Fame induction.
 - Accepts user-inputted stats and returns prediction.
 - Uses real historical data to train and evaluate the model.
 
-### 🗄️ Database (PostgreSQL)
+### Database (PostgreSQL)
 - Player data imported from CSV into PostgreSQL.
 - Efficient queries with indexed columns for quick filtering.
 - Normalized schema for clean data relationships (players, stats, predictions).
